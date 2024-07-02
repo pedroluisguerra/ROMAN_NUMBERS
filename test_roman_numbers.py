@@ -15,3 +15,4 @@ def test_composed_roman():
     assert to_roman(999) == "CMXCIX"
     assert to_roman(99) == "XCIX"
     assert to_roman(6) == "VI"
+    assert to_roman(1903) == "MCMIII"

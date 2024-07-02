@@ -1,4 +1,6 @@
 valors = {
+    5000: "V*",
+    4000: "IV*",
     1000: "M",
     900: "CM",
     500: "D",
@@ -20,7 +22,13 @@ def to_roman(n):
     
     for number in valors:
         
-        if n >= 1000:
+        if n >= 5000:
+            n = n - 5000
+            result = valors[5000] + result
+        elif n >= 4000:
+            n = n - 4000
+            result = valors[4000] + result
+        elif n >= 1000:
             n = n - 1000
             result = valors[1000] + result
         elif n >= 900:
@@ -59,7 +67,7 @@ def to_roman(n):
         elif n >= 1:
             n = n - 1
             result = result + valors[1]
-        elif n == 0:
+        elif n <= 0:
           break
            
         else:
@@ -68,4 +76,4 @@ def to_roman(n):
     
     return result
 
-print(to_roman(999))
+print(to_roman(5125))
