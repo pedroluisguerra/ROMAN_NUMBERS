@@ -11,3 +11,7 @@ def test_main_romans():
 
 def test_composed_roman():
     assert to_roman(6) == "VI"
+    assert to_roman(1001) == "MI"
+    assert to_roman(999) == "CMXCIX"
+    assert to_roman(99) == "XCIX"
+    assert to_roman(6) == "VI"

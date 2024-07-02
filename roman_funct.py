@@ -1,5 +1,6 @@
 valors = {
     1000: "M",
+    900: "CM",
     500: "D",
     400: "CD",
     100: "C",
@@ -22,6 +23,9 @@ def to_roman(n):
         if n >= 1000:
             n = n - 1000
             result = valors[1000] + result
+        elif n >= 900:
+            n = n - 900
+            result = result + valors[900]
         elif n >= 500:
             n = n - 500
             result = result + valors[500]
@@ -64,4 +68,4 @@ def to_roman(n):
     
     return result
 
-print(to_roman(1293))
+print(to_roman(999))
