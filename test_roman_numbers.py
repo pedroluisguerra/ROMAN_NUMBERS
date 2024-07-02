@@ -8,3 +8,6 @@ def test_main_romans():
     assert to_roman(100) == "C"
     assert to_roman(500) == "D"
     assert to_roman(1000) == "M"
+
+def test_composed_roman():
+    assert to_roman(6) == "VI"
