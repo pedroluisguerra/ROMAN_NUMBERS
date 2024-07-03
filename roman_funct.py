@@ -61,3 +61,15 @@ def digitos_a_roman(lista):
 def arabigo_a_romano(n: int):
     lista = dividir_en_digitos(n)
     return digitos_a_roman(lista)
+
+def divide_en_miles(n:int):
+    lista = []
+    modulo = n % 1000
+    entero = n // 1000
+    if entero < 4:
+        lista.append(n)
+    else:
+        
+        lista.append(modulo)
+        lista.append(entero)
+    return lista
