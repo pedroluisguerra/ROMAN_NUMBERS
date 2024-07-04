@@ -35,7 +35,7 @@ def divisor_n(n:int):
 
 def to_roman(n:int):
 
-    a, b = divisor_n(n)
+    a, b = divisor_n(int(n))
     
     if a <= 3:
         result = a * valors[b]
@@ -66,10 +66,30 @@ def divide_en_miles(n:int):
     lista = []
     modulo = n % 1000
     entero = n // 1000
-    if entero < 4:
+    while entero >= 1000:
+        lista.append(modulo)
+        n = entero
+        modulo = n % 1000
+        entero = n // 1000 
+    
+    if entero <= 3:
         lista.append(n)
     else:
-        
         lista.append(modulo)
         lista.append(entero)
     return lista
+
+
+def romano_mayor_de_3999(n:int):
+
+    list = divide_en_miles(n)
+    len_list = len(list)
+    result = ""
+    
+    for i in range(len_list):
+        result = arabigo_a_romano(list[i]) + (i) * "*" + result 
+    
+    return result                  
+
+
+print(romano_mayor_de_3999(55555199856))
